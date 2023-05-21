@@ -26,7 +26,7 @@ function bps(canvasId, particleCount, temperature, pressure, evade) {
     isMouseDown = false;
   }
 
-  canvas.width = window.innerWidth - 20;
+  canvas.width = window.innerWidth - 600;
   canvas.height = window.innerHeight - 20;
 
   class Particle {
