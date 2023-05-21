@@ -9,22 +9,22 @@ function bps(canvasId, particleCount, temperature, pressure, evade) {
 
   // Add the following event listeners to track mouse movement and click events
   canvas.addEventListener('mousemove', handleMouseMove);
-  canvas.addEventListener('mousedown', handleMouseDown);
-  canvas.addEventListener('mouseup', handleMouseUp);
+canvas.addEventListener('mousedown', handleMouseDown);
+canvas.addEventListener('mouseup', handleMouseUp);
 
-  function handleMouseMove(event) {
-    mousePosition.x = event.clientX - canvas.offsetLeft;
-    mousePosition.y = event.clientY - canvas.offsetTop;
-  }
+function handleMouseMove(event) {
+  mousePosition.x = event.clientX - canvas.getBoundingClientRect().left;
+  mousePosition.y = event.clientY - canvas.getBoundingClientRect().top;
+}
 
-  function handleMouseDown(event) {
-    isMouseDown = true;
-    spawnParticles(30);
-  }
+function handleMouseDown(event) {
+  isMouseDown = true;
+  spawnParticles(30);
+}
 
-  function handleMouseUp(event) {
-    isMouseDown = false;
-  }
+function handleMouseUp(event) {
+  isMouseDown = false;
+}
 
   canvas.width = window.innerWidth - 600;
   canvas.height = window.innerHeight - 20;
@@ -163,15 +163,16 @@ function bps(canvasId, particleCount, temperature, pressure, evade) {
   }
 
   function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].draw();
-      particles[i].update();
-    }
-
-    requestAnimationFrame(animate);
+  for (let i = 0; i < particles.length; i++) {
+    particles[i].draw();
+    particles[i].update();
   }
+
+  requestAnimationFrame(animate);
+}
+
 
   function reset() {
     init();
