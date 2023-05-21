@@ -1,0 +1,10 @@
+<script src="bps.min.js"></script>
+<canvas id="canvasId"></canvas>
+<script>
+const particleCount = 50;
+const temperature = 50;
+const pressure = 50;
+
+const simulation = bps('canvasId', particleCount, temperature, pressure, false);
+simulation.reset();
+</script>
