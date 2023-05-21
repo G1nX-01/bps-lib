@@ -1,3 +1,9 @@
+<div>
+<h2>Code snippets (click any to execute them)</h2>
+<p id="code1" style="cursor: pointer;" onclick="thing(document.getElementById('code1').innerHTML)">simulation.reset();</p>
+<p id="code2" style="cursor: pointer;" onclick="thing(document.getElementById('code2').innerHTML)">simulation = bps('canvasId', 800, 60, 50, true);</p>
+<p id="code3" style="cursor: pointer;" onclick="thing(document.getElementById('code3').innerHTML)">simulation = bps('canvasId', 50, 50, 50, false);</p>
+</div>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
@@ -23,9 +29,3 @@ function thing(t) {
 eval(t)
 }
 </script>
-<div hidden>
-<h2>Code snippets (click any to execute them)</h2>
-<p id="code1" style="cursor: pointer;" onclick="thing(document.getElementById('code1').innerHTML)">simulation.reset();</p>
-<p id="code2" style="cursor: pointer;" onclick="thing(document.getElementById('code2').innerHTML)">simulation = bps('canvasId', 800, 60, 50, true);</p>
-<p id="code3" style="cursor: pointer;" onclick="thing(document.getElementById('code3').innerHTML)">simulation = bps('canvasId', 50, 50, 50, false);</p>
-</div>
