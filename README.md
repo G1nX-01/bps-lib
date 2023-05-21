@@ -9,7 +9,7 @@ Just import it like a normal library, like this:
 ```
 For the simulation to work:
 ```javascript
-bps(canvasId <string>, particleCount <number>, temperature <number>, pressure <number>, evadeMouse <bool> )
+let simulation = bps(canvasId <string>, particleCount <number>, temperature <number>, pressure <number>, evadeMouse <bool> )
 ```
 
 If you want to reset it:
