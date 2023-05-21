@@ -1,10 +1,31 @@
-<script src="bps.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap" rel="stylesheet">
+<style>
+html {
+  font-family: 'Fira Code', monospace;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+</style>
+<div>
+<h2>Code snippets (click any to execute them)</h2>
+<p id="code1" style="cursor: pointer;" onclick="thing(document.getElementById('code1').innerHTML)">simulation.reset();</p>
+<p id="code2" style="cursor: pointer;" onclick="thing(document.getElementById('code2').innerHTML)">simulation = bps('canvasId', 800, 60, 50, true);</p>
+<p id="code3" style="cursor: pointer;" onclick="thing(document.getElementById('code3').innerHTML)">simulation = bps('canvasId', 50, 50, 50, false);</p>
+</div>
 <canvas id="canvasId"></canvas>
+<script src="bps.js"></script>
 <script>
 const particleCount = 50;
 const temperature = 50;
 const pressure = 50;
 
-const simulation = bps('canvasId', particleCount, temperature, pressure, false);
+let simulation = bps('canvasId', particleCount, temperature, pressure, false);
 simulation.reset();
+
+function thing(t) {
+eval(t)
+}
 </script>
