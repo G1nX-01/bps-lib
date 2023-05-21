@@ -181,6 +181,30 @@ function bps(canvasId, particleCount, temperature, pressure, evade) {
   init();
   animate();
 
+  // Function to handle dark mode preference change
+function handleDarkModeChange(event) {
+  const isDarkMode = event.matches;
+
+  if (isDarkMode) {
+    canvas.style.backgroundColor = '#000000'; // Set the background color to black
+  } else {
+    canvas.style.backgroundColor = '#ffffff'; // Set the background color to white (or any other desired color)
+  }
+}
+
+// Detect the user's preferred color scheme
+const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Set the initial background color based on the current color scheme
+if (prefersDarkMode.matches) {
+  canvas.style.backgroundColor = '#212121'; // Set the background color to black
+} else {
+  canvas.style.backgroundColor = '#ffffff'; // Set the background color to white (or any other desired color)
+}
+
+// Listen for changes in the color scheme preference
+prefersDarkMode.addListener(handleDarkModeChange);
+
   // Return any public functions or variables that you want to expose
   return {
     reset: reset
