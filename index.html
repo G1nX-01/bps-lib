@@ -9,23 +9,23 @@ html {
   user-select: none; /* Standard syntax */
 }
 </style>
-<div>
-<h2>Code snippets (click any to execute them)</h2>
-<p id="code1" style="cursor: pointer;" onclick="thing(document.getElementById('code1').innerHTML)">simulation.reset();</p>
-<p id="code2" style="cursor: pointer;" onclick="thing(document.getElementById('code2').innerHTML)">simulation = bps('canvasId', 800, 60, 50, true);</p>
-<p id="code3" style="cursor: pointer;" onclick="thing(document.getElementById('code3').innerHTML)">simulation = bps('canvasId', 50, 50, 50, false);</p>
-</div>
 <canvas id="canvasId"></canvas>
 <script src="bps.js"></script>
 <script>
-const particleCount = 50;
-const temperature = 50;
+const particleCount = 800;
+const temperature = 60;
 const pressure = 50;
 
-let simulation = bps('canvasId', particleCount, temperature, pressure, false);
+let simulation = bps('canvasId', particleCount, temperature, pressure, true);
 simulation.reset();
 
 function thing(t) {
 eval(t)
 }
 </script>
+<div hidden>
+<h2>Code snippets (click any to execute them)</h2>
+<p id="code1" style="cursor: pointer;" onclick="thing(document.getElementById('code1').innerHTML)">simulation.reset();</p>
+<p id="code2" style="cursor: pointer;" onclick="thing(document.getElementById('code2').innerHTML)">simulation = bps('canvasId', 800, 60, 50, true);</p>
+<p id="code3" style="cursor: pointer;" onclick="thing(document.getElementById('code3').innerHTML)">simulation = bps('canvasId', 50, 50, 50, false);</p>
+</div>
