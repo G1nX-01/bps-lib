@@ -14,7 +14,7 @@ let simulation = bps(canvasId <string>, particleCount <number>, temperature <num
 
 If you want to reset it:
 ```javascript
-reset()
+simulation.reset()
 ```
  
 That's basically it lmfao
